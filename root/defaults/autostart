@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run Flycast
+xterm -e /opt/flycast/AppRun
