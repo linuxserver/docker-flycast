@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Run Flycast
-foot -e /opt/flycast/AppRun
+/opt/flycast/AppRun
