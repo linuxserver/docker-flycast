@@ -20,7 +20,7 @@ RUN \
     https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/flycast-logo.png && \
   echo "**** install packages ****" && \
   DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/flyinghead/flycast/releases/latest" \
-    | awk -F '(": "|")' '/browser.*.AppImage/ {print $3}') && \
+    | jq -r 'first(.assets[].browser_download_url | select(test("AppImage")))') && \
   curl -o \
     /tmp/fly.app -L \
     "${DOWNLOAD_URL}" && \
